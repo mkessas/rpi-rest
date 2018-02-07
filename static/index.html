@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mexican Wave API</title>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+<style>
+body {
+    margin: 40px;
+}
+</style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="btn-group-vertical">
+                    <button class="btn btn-lg btn-success" id="desk1-up"><i class="fa fa-chevron-circle-up"></i></button>
+                    <button class="btn btn-lg btn-danger" id="desk1-down"><i class="fa fa-chevron-circle-down"></i></button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="btn-group-vertical">
+                    <button class="btn btn-lg btn-success" id="desk2-up"><i class="fa fa-chevron-circle-up"></i></button>
+                    <button class="btn btn-lg btn-danger" id="desk2-down"><i class="fa fa-chevron-circle-down"></i></button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="btn-group-vertical">
+                    <button class="btn btn-lg btn-success" id="desk3-up"><i class="fa fa-chevron-circle-up"></i></button>
+                    <button class="btn btn-lg btn-danger" id="desk3-down"><i class="fa fa-chevron-circle-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $("#desk1-up").mousedown(function() { $.get("/api/button/up/on"); })
+            $("#desk1-up").mouseup(function() { $.get("/api/button/up/off"); })
+
+            $("#desk1-down").mousedown(function() { $.get("/api/button/down/on"); })
+            $("#desk1-down").mouseup(function() { $.get("/api/button/down/off"); })
+
+            $("#desk2-up").mousedown(function() { console.log("Desk 2 UP Activated"); })
+            $("#desk2-up").mouseup(function() { console.log("Desk 2 UP Deactivated"); })
+
+            $("#desk2-down").mousedown(function() { console.log("Desk 2 DOWN Activated"); })
+            $("#desk2-down").mouseup(function() { console.log("Desk 2 DOWN Deactivated"); })
+
+            $("#desk3-up").mousedown(function() { console.log("Desk 3 UP Activated"); })
+            $("#desk3-up").mouseup(function() { console.log("Desk 3 UP Deactivated"); })
+
+            $("#desk3-down").mousedown(function() { console.log("Desk 3 DOWN Activated"); })
+            $("#desk3-down").mouseup(function() { console.log("Desk 3 DOWN Deactivated"); })
+        })
+    </script>
+
+    
+  </body>
+</html>
